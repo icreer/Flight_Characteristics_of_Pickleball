@@ -44,9 +44,33 @@ timePrecision   6;
 
 runTimeModifiable true;
 
+
 functions
 {
-    
+    forces
+    {
+        type            forceCoeffs;
+        libs            (forces);
+        writeControl    writeTime;
+
+        patches
+        (
+            wall
+        );
+
+        rho         rhoInf;
+        rhoInf      100000;
+        
+
+        CofR        (0 0 0);
+        liftDir     (0 1 0);
+        dragDir     (1 0 0);
+        pitchAxis   (0 0 1);
+        magUInf     10.0;
+        lRef        1;
+        Aref        1;
+    }
+
 }
 
 
